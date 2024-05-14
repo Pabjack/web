@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venta de hamburguesas</title>
+</head>
+<body>
+    <section>
+        <form>
+            <h1>Escoge los elementos de tu hamburguesa</h1>
+            <section>
+                <label for="prote">Que tipo de proteina te gusta?</label>
+                <br>
+                <input type="text" name="proteina" id="prote">
+            </section>
+            <br>
+            <section>
+                <label for="monto">Cuantas hamburguesas quieres?</label>
+                <br>
+                <input type="number" name="monto" id="monto" min="1" max="20">
+            </section>
+            <br>
+            <section>
+                <label for="termino">Que termino de cocimiento quieres la hamburguesa?</label>
+                <br>
+                <input type="range" name="termino" id="termino" min="1" max="5">
+            </section>
+            <br>
+            <section>
+                <h4>quieres queso en la hamburguesa?</h4>
+                <br>
+                <label for="si">Si</label>
+                <input type="radio" name="si" id="si" value="si">
+                <label for="no">No</label>
+                <input type="radio" name="si" id="no" value="no">
+            </section>
+            <br>
+            <section>
+                <label for="pan">Que tipo de pan quieres?</label>
+                <br>
+                <select name="pan" id="pan">
+                    <option value=""></option>
+                    <option value="trigo">Trigo</option>
+                    <option value="papa">Papa</option>
+                    <option value="tipo galleta">Tipo Galleta</option>
+                </select>
+                </section>
+                <br>
+                <section>
+                    <label for="salsa">Tipo de salsa</label>
+                    <br>
+                    <input list = "salsas" id="salsa" name="salsa"> 
+                    <datalist id="salsas">
+                        <option value="catsup">catsup</option>
+                        <option value="mayonesa">mayonesa</option>
+                        <option value="mostaza">mostaza</option>
+                    </datalist>
+                </section>
+                <br>
+                <section>
+                    <label for="extra">Algo extra que quieres agregar</label>
+                    <br>
+                    <textarea name="extra" id="extra" cols="40" rows="3"></textarea>
+                </section>
+                <br>
+                <section>
+                    <input type="submit" value="comprar">
+                </section>
+
+        </form>
+</body>
+</html>

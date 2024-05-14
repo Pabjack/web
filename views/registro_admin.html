@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        function getParameterByName(name, url)
+        {
+            //si url es nulo, quedarse en la ubicacion actual
+            if(!url) url = window.location.href;
+            //validacion de caracteres especiales con corchete
+            name = name.replace(/[\[\]]/g, "\\$&")
+            //busca el parametro precedido por el signo de ?
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
+            //asigna a una variable retults el url depurado
+            results = regex.exec(url);
+            if(!results) return null;
+            if(!results[2]) return '';
+
+            return decodeURIComponent(results[2].replace(/\+/g, ""));
+        }
+        var message = getParameterByName('message')
+        if(message){ alert(message);}
+
+    </script>
+
+    <section>
+    <h1>Crear una cuenta</h1>
+    <br>
+    <br>
+    <form action="../forms/registrarusuariopdo.php" method="post">
+    <section>
+        <label for="rfc">RFC</label>
+        <br>
+        <input type="text" required name="rfc" id="rfc" min="13" max="13">
+    </section>
+    <br>
+    <br>
+    <section>
+        <label for="nombre">Nombre </label>
+        <br>
+        <input type="text" required name="nombre" id="nombre" min="5" max="100">
+    </section>
+<br>
+<br>
+<section>
+    <label for="pass">Contraseña</label>
+    <br><input type="password" required name="password" id="password" min="8" max="20">
+</section>
+
+<br>
+<input type="submit" value="Enviar" >
+</section>
+</form>
+</body>
+</html>
